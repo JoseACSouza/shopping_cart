@@ -3,7 +3,6 @@ export const fetchProduct = () => {
 };
 
 export const fetchProductsList = async (search) => {
-  // seu código aqui
   if (!search) {
     throw new Error('Termo de busca não informado');
   }
