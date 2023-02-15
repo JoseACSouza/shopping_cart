@@ -15,7 +15,7 @@ fetchProductsList('computador').then((data) => {
   data.forEach((element) => {
     productChart.appendChild(createProductElement(element));
   });
-}).catch((error) => {
+}).catch(() => {
   const removeLoading = document.getElementsByClassName('loading')[0];
   removeLoading.innerHTML = 'Algum erro ocorreu, recarregue a página e tente novamente';
   removeLoading.classList.add('error');
