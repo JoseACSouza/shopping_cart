@@ -26,14 +26,13 @@ fetchProductsList('computador').then((data) => {
   removeLoading.innerHTML = 'Algum erro ocorreu, recarregue a página e tente novamente';
   removeLoading.classList.add('error');
 });
-
 const loadCart = async () => {
   const solvedPromises = await Promise.all(getSavedCartIDs()
     .map((element) => fetchProduct(element)));
   solvedPromises.forEach((item) => {
-    sumPrice(item.price);
     document.getElementsByClassName('cart__products')[0]
       .appendChild(createCartProductElement(item));
+    sumPrice(item.price);
   });
 };
 loadCart();

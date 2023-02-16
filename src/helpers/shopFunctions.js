@@ -7,7 +7,7 @@ export const sumPrice = (price) => {
   actualPrice += parseFloat(price);
   getActualPrice.innerHTML = actualPrice;
 };
-export const subtractionPrice = (id) => {
+export const subtractPrice = (id) => {
   let price = 0;
   fetchProduct(id).then((data) => {
     price = data.price;
@@ -64,8 +64,8 @@ export const getIdFromProduct = (product) => (
  * @param {string} id - ID do produto a ser removido do carrinho.
  */
 const removeCartProduct = (li, id) => {
-  subtractionPrice(id);
   li.remove();
+  subtractPrice(id);
   removeCartID(id);
 };
 
@@ -144,8 +144,8 @@ export const createProductElement = ({ id, title, thumbnail, price }) => {
 
   cartButton.addEventListener('click', () => {
     sumPrice(price);
-    saveCartID([id]);
-    fetchProduct([id]).then((data) => {
+    saveCartID(id);
+    fetchProduct(id).then((data) => {
       document.getElementsByClassName('cart__products')[0]
         .appendChild(createCartProductElement(data));
     });
