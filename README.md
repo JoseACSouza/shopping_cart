@@ -1,4 +1,5 @@
-# :construction: README em construção ! :construction:
+# Carrinho de compras 🛒:
+Cria um sistema que recebe as informações de uma API e ao clicar no botão adiciona ou remove um item do carrinho.
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto.
 É essencial que você preencha esse documento por conta própria, ok?
